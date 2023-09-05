@@ -1,0 +1,64 @@
+{
+  "defaultCommandTimeout": 25000,
+  "pageLoadTimeout": 100000,
+  "screenshot": true,
+  "video": false,
+  "chromeWebSecurity": false,
+  "retries": {
+    "runMode": 2,
+    "openMode": 0
+  },
+  "baseUrl": "https://pathshala.staging.callai.mindtickle.com/",
+  "integrationFolder": "cypress/integration/test",
+  "reporter": "cypress-multi-reporters",
+  "reporterOptions": {
+    "reporterEnabled": "mochawesome",
+    "mochawesomeReporterOptions": {
+      "reportDir": "cypress/reports/mocha",
+      "overwrite": false,
+      "quite": true,
+      "html": false,
+      "json": true,
+      "timestamp": "mmddyyy-HHMMss",
+      "charts": true,
+      "embeddedScreenshots": true,
+      "reportPageTitle": "CallAI e2e test Report"
+    }
+  },
+  "ignoreTestFiles": ["**/__snapshots__/*", "**/__image_snapshots__/*"],
+  "env": {
+    "cypress-plugin-snapshots": {
+      "autoCleanUp": false,
+      "autopassNewSnapshots": true,
+      "diffLines": 3,
+      "excludeFields": [],
+      "ignoreExtraArrayItems": false,
+      "ignoreExtraFields": true,
+      "normalizeJson": true,
+      "prettier": true,
+      "imageConfig": {
+        "createDiffImage": true,
+        "resizeDevicePixelRatio": true,
+        "threshold": 0.05,
+        "thresholdType": "percent"
+      },
+      "screenshotConfig": {
+        "blackout": [],
+        "capture": "viewport",
+        "customDiffConfig": "{ threshold: 0.5 }",
+        "clip": null,
+        "disableTimersAndAnimations": true,
+        "log": true,
+        "scale": false,
+        "timeout": 30000
+      },
+      "serverEnabled": true,
+      "serverHost": "localhost",
+      "serverPort": 2121,
+      "updateSnapshots": false,
+      "backgroundBlend": "difference"
+    },
+    "cypress/globals": true,
+    "coverage": false
+  }
+}
